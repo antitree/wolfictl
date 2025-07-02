@@ -513,6 +513,13 @@ func TestLinter_Rules(t *testing.T) {
 			matches:     0,
 		},
 		{
+			file:        "double-ampersand-valid.yaml",
+			minSeverity: SeverityWarning,
+			want:        EvalResult{},
+			wantErr:     false,
+			matches:     0,
+		},
+		{
 			file:        "daemon-flag-no-redirect.yaml",
 			minSeverity: SeverityWarning,
 			want: EvalResult{
@@ -530,21 +537,21 @@ func TestLinter_Rules(t *testing.T) {
 			wantErr: false,
 			matches: 1,
 		},
-                {
-                        file:        "daemon-flag-with-redirect.yaml",
-                        minSeverity: SeverityWarning,
-                        want:        EvalResult{},
-                        wantErr:     false,
-                        matches:     0,
-                },
-               {
-                       file:        "cut-d-flag.yaml",
-                       minSeverity: SeverityWarning,
-                       want:        EvalResult{},
-                       wantErr:     false,
-                       matches:     0,
-               },
-        }
+		{
+			file:        "daemon-flag-with-redirect.yaml",
+			minSeverity: SeverityWarning,
+			want:        EvalResult{},
+			wantErr:     false,
+			matches:     0,
+		},
+		{
+			file:        "cut-d-flag.yaml",
+			minSeverity: SeverityWarning,
+			want:        EvalResult{},
+			wantErr:     false,
+			matches:     0,
+		},
+	}
 
 	for _, tt := range tests {
 		t.Run(tt.file, func(t *testing.T) {
