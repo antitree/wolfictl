@@ -545,6 +545,13 @@ func TestLinter_Rules(t *testing.T) {
 			matches:     0,
 		},
 		{
+			file:        "avahi-no-daemon.yaml",
+			minSeverity: SeverityWarning,
+			want:        EvalResult{},
+			wantErr:     false,
+			matches:     0,
+		},
+		{
 			file:        "cut-d-flag.yaml",
 			minSeverity: SeverityWarning,
 			want:        EvalResult{},
